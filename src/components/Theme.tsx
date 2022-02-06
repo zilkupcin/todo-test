@@ -6,6 +6,7 @@ const theme = {
   colors: {
     primary: "#7C5DFA",
     primaryLight: "#9277FF",
+    greyOne: "#F9FAFE",
   },
 };
 
@@ -15,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
     height: 100vh;
     overflow-x: hidden;
+    background-color: #F8F8FB;
   }
 
   button {
@@ -22,9 +24,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 16px;
   }
 
-  .memory-game {
+  #todo {
       display: flex;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
   }
 `;
