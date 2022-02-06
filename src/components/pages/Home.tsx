@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import Content from "../Content";
 import Footer from "../Footer";
 

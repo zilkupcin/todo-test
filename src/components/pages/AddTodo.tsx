@@ -1,10 +1,6 @@
 import { FC } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Back from "../Back";
-import Content from "../Content";
-import Footer from "../Footer";
 import TodoForm from "../TodoForm";
 
 const Container = styled.div`
