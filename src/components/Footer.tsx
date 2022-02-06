@@ -3,24 +3,38 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const SyledFooter = styled.footer`
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  padding: 12px;
+  padding: 24px;
 
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-color: ${(props) => props.theme.colors.primary};
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    transition: opacity 0.2s ease-in-out;
+
+    img {
+      width: 16px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   @media only screen and (min-width: 768px) {
-    padding: 24px;
+    position: relative;
+    padding: 0 24px 24px 24px;
 
     button {
       width: 52px;
