@@ -6,7 +6,10 @@ const theme = {
   colors: {
     primary: "#7C5DFA",
     primaryLight: "#9277FF",
+    primaryDark: "#494E6E",
     greyOne: "#F9FAFE",
+    greyTwo: "#DFE3FA",
+    greyThree: "#7E88C3",
   },
 };
 
@@ -22,6 +25,8 @@ const GlobalStyle = createGlobalStyle`
   button {
     font-family: 'Atkinson Hyperlegible', sans-serif;
     font-size: 16px;
+    border: none;
+    cursor: pointer;
   }
 
   #todo {
@@ -30,6 +35,23 @@ const GlobalStyle = createGlobalStyle`
       justify-content: center;
       align-items: center;
       height: 100vh;
+  }
+
+  label {
+      display: block;
+      color: ${theme.colors.greyThree};
+      font-size: 0.875rem;
+  }
+
+  input {
+      padding: 12px;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid ${theme.colors.greyTwo};
+      color: ${theme.colors.primaryDark};
+      font-family: 'Spartan', sans-serif;
+      font-weight: 700;
   }
 `;
 
