@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const SyledFooter = styled.footer`
@@ -32,10 +33,17 @@ const SyledFooter = styled.footer`
   }
 `;
 
-const Footer: FC = () => {
+interface Props {}
+
+const Footer: FC<Props> = () => {
+  const navigate = useNavigate();
+
+  const handleAddItemClick = () => {
+    navigate("/add");
+  };
   return (
     <SyledFooter>
-      <button>
+      <button onClick={handleAddItemClick}>
         <img src="/images/add.svg" />
       </button>
     </SyledFooter>
