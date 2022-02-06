@@ -88,16 +88,19 @@ interface Props {
 const TodoItem: FC<Props> = ({ onRemoveClick, onCompleteClick, todo }) => {
   const navigate = useNavigate();
 
+  // Navigates to the 'Edit todo' page
   const handleEditTodoClick = () => {
     if (todo.completedDate) return;
 
     navigate(`/edit/${todo.id}`);
   };
 
+  // Removes the item from the todo list
   const handleRemoveTodoClick = () => {
     onRemoveClick(todo);
   };
 
+  // Marks the item as completed
   const handleCompleteTodoClick: MouseEventHandler<HTMLLIElement> = (
     e: MouseEvent
   ) => {
@@ -108,7 +111,7 @@ const TodoItem: FC<Props> = ({ onRemoveClick, onCompleteClick, todo }) => {
     onCompleteClick(todo);
   };
 
-  const getFormatedDate = () => {
+  const getFormattedDate = () => {
     return todo.date.toLocaleString("en-GB", {
       year: "numeric",
       month: "numeric",
@@ -122,7 +125,7 @@ const TodoItem: FC<Props> = ({ onRemoveClick, onCompleteClick, todo }) => {
       onClick={handleCompleteTodoClick}
     >
       <StyledTitle>{todo.name}</StyledTitle>
-      <StyledDate>Due date {getFormatedDate()}</StyledDate>
+      <StyledDate>Due date {getFormattedDate()}</StyledDate>
       <StyledActionGroup>
         <ActionButton
           onClick={handleEditTodoClick}

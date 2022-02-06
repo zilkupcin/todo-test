@@ -30,32 +30,41 @@ const StyledTodoCounter = styled.h2`
 
 const Content: FC = () => {
   const [isModalShown, setIsModalShown] = useState(false);
+
+  // Get all stored todos
   const todos = useSelector((state: RootStateOrAny) => state.todos);
+
   const isTargetAchieved = useSelector(
     (state: RootStateOrAny) => state.isTargetAchieved
   );
   const dispatch = useDispatch();
 
+  // Combine action creators
   const { removeTodo, completeTodo, setTargetAchieved } = bindActionCreators(
     actionCreators,
     dispatch
   );
 
+  // Removes a todo item from the list
   const handleRemoveTodo = (todo: Todo) => {
     removeTodo(todo);
   };
 
+  // Marks item as complete
   const handleCompleteTodo = (todo: Todo) => {
     completeTodo(todo);
   };
 
+  // Gets how many items are still not completed
   const getIncompleteTaskCount = () => {
     return todos.filter((todo: Todo) => !todo.completedDate).length;
   };
 
+  // Check if the goal of 3 completed tasks today was achieved
   useEffect(() => {
     if (isTargetAchieved) return;
 
+    // Get the number of completed tasks today
     const tasksCompletedToday = todos.filter((todo: Todo) => {
       const today = new Date();
 
@@ -66,12 +75,14 @@ const Content: FC = () => {
       );
     }).length;
 
+    // Show the 'goal achieved' modal
     if (tasksCompletedToday === 3) {
       setIsModalShown(true);
       setTargetAchieved();
     }
   }, [todos]);
 
+  // Close the 'goal achieved' modal
   const handleModalClose = () => {
     setIsModalShown(false);
   };

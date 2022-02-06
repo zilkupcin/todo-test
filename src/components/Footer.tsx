@@ -52,9 +52,11 @@ interface Props {}
 const Footer: FC<Props> = () => {
   const navigate = useNavigate();
 
+  // Navigate to the Add Todo page
   const handleAddItemClick = () => {
     navigate("/add");
   };
+
   return (
     <SyledFooter>
       <button onClick={handleAddItemClick}>

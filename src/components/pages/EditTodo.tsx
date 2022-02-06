@@ -22,6 +22,7 @@ const Container = styled.div`
 const EditTodo: FC = () => {
   const { todoId } = useParams();
 
+  // Get the todo based on the ID from the url parameter
   const todo = useSelector((state: RootStateOrAny) => {
     const currentTodoId = todoId !== undefined ? parseInt(todoId) : 0;
     return state.todos.find((todo: Todo) => todo.id === currentTodoId);
