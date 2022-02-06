@@ -20,13 +20,21 @@ const StyledHeader = styled.header`
     width: 100%;
     bottom: 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 32px;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const Header = () => {
   return (
     <StyledHeader>
       <h1>Todo</h1>
-      <img src="/wave.svg"></img>
+      <img src="/images/wave.svg"></img>
     </StyledHeader>
   );
 };
