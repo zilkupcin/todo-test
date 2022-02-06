@@ -2,8 +2,11 @@ import Theme from "./components/Theme";
 import Header from "./components/Header";
 import styled from "styled-components";
 import "./reset.css";
-import Footer from "./components/Footer";
-import Content from "./components/Content";
+
+import { Route, Routes } from "react-router-dom";
+import AddTodo from "./components/pages/AddTodo";
+import EditTodo from "./components/pages/EditTodo";
+import Home from "./components/pages/Home";
 
 const Container = styled.div`
   display: flex;
@@ -28,8 +31,11 @@ function App() {
     <Theme>
       <Container>
         <Header />
-        <Content />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/edit/:todoId" element={<EditTodo />} />
+          <Route path="/add/" element={<AddTodo />} />
+        </Routes>
       </Container>
     </Theme>
   );
