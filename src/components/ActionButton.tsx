@@ -18,11 +18,12 @@ const StyledButton = styled.button`
 
 interface Props {
   imagePath: string;
+  onClick?: () => void;
 }
 
-const ActionButton: FC<Props> = ({ imagePath }) => {
+const ActionButton: FC<Props> = ({ imagePath, onClick }) => {
   return (
-    <StyledButton>
+    <StyledButton className="action-btn" onClick={onClick}>
       <img src={imagePath} />
     </StyledButton>
   );
