@@ -9,6 +9,10 @@ const Container = styled.main`
   @media only screen and (min-width: 480px) {
     padding: 24px;
   }
+
+  @media only screen and (min-width: 768px) {
+    padding: 32px;
+  }
 `;
 
 const StyledTodoCounter = styled.h2`
