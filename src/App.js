@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Theme from "./components/Theme";
+import Header from "./components/Header";
+import styled from "styled-components";
+import "./reset.css";
+import Footer from "./components/Footer";
+import Content from "./components/Content";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+
+  @media only screen and (min-width: 768px) {
+    height: auto;
+    max-width: 800px;
+    min-height: 500px;
+    margin: 0 24px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 15px rgba(231, 231, 231, 0.4);
+    overflow: hidden;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Theme>
+      <Container>
+        <Header />
+        <Content />
+        <Footer />
+      </Container>
+    </Theme>
   );
 }
 
