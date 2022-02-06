@@ -1,7 +1,7 @@
 import Theme from "./components/Theme";
 import Header from "./components/Header";
 import styled from "styled-components";
-import "./reset.css";
+import "./styles/reset.css";
 
 import { Route, Routes } from "react-router-dom";
 import AddTodo from "./components/pages/AddTodo";
@@ -17,8 +17,7 @@ const Container = styled.div`
 
   @media only screen and (min-width: 768px) {
     height: auto;
-    max-width: 800px;
-    min-height: 500px;
+    max-width: 700px;
     margin: 0 24px;
     border-radius: 8px;
     box-shadow: 4px 4px 15px rgba(231, 231, 231, 0.4);
