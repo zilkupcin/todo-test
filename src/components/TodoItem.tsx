@@ -27,7 +27,7 @@ const StyledTodo = styled.li`
   }
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 4fr 2fr 1fr;
+    grid-template-columns: 4fr 2.5fr 1fr;
   }
 `;
 
@@ -57,6 +57,7 @@ const StyledDate = styled.span`
 
   @media only screen and (min-width: 768px) {
     grid-area: unset;
+    text-align: right;
   }
 `;
 
